@@ -1,19 +1,23 @@
 {
   "name": "koishi-plugin-adapter-mail-pro",
   "description": "邮件适配器增强版，支持自定义邮件主题、发件人名称、STARTTLS加密模式",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "contributors": [
     "opwop <slhp1013@qq.com>",
     "bot_actions <168329908@qq.com>"
   ],
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "homepage": "https://github.com/opwop1/koishi-plugin-adapter-mail-pro",
   "files": [
     "lib",
     "dist"
   ],
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "yakumo build",
+    "dev": "yakumo dev"
+  },
   "keywords": [
     "chatbot",
     "koishi",
@@ -22,8 +26,29 @@
     "mail",
     "pro"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.14",
+    "typescript": "^5.3.3",
+    "yakumo": "^1.0.0"
+  },
+  "dependencies": {
+    "@satorijs/adapter-mail": "*",
+    "nodemailer": "^6.9.13"
+  },
   "peerDependencies": {
     "koishi": "^4.18.7"
+  },
+  "peerDependenciesMeta": {
+    "koishi": {
+      "optional": false
+    }
+  },
+  "koishi": {
+    "description": {
+      "zh": "邮件适配器增强版，支持自定义邮件主题、发件人名称、STARTTLS加密模式"
+    },
+    "service": {
+      "required": ["mail"]
+    }
   }
 }
